@@ -1,12 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import catData from './cat_metadata.json';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div>cat species</div>
-      </header>
+    <div>
+      <div>
+        {catData.map((cat) =>
+            <div>
+                <img src= {process.env.PUBLIC_URL + "/cat_pictures/" +cat.breed + '.jpg'} alt={cat.breed} />
+            </div>)
+        }
+      </div>
     </div>
   );
 }
