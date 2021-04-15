@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+$panel-width: 400px;
+
+.cat-panel {
+  width: $panel-width;
+  height: 100vh;
+  position: fixed;
+  background: olive;
+}
+
+.bar-chart {
+  display: block;
+}
+
+.bar {
+  transition: height 0.2s cubic-bezier(.32,1.13,.67,1.75);
+  display: block;
+  margin: 10px;
+}
+
+.bar-and-text {
+  display: inline-block;
+}
+
+.cat-display {
+  background: #f0f0f0;
+  position: absolute;
+  top: 0;
+  left: $panel-width;
+  z-index: -1;
+
+  .flip-move {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.cat-card {
+  height: 180px;
+  width: 180px;
+  margin: 45px;
+
+  img {
+    display: block;
+    transition: width 0.2s cubic-bezier(.32,1.13,.67,1.75), height 0.2s cubic-bezier(.32,1.13,.67,1.75), transform 0.2s cubic-bezier(.32,1.13,.67,1.75);
+    height: 180px;
+    width: 180px;
+    margin: auto;
+
+    &:hover {
+      height: 200px;
+      width: 200px;
+    }
+  }
+}
+
+
+
+.popup {
+  min-width: 100%;
+  min-height: 100%;
+  background: white;
+
+  img {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+  }
+
+  .cat-info {
+    display: inline-block;
+  }
+}
+
+.all-cats {
+  .aPPpx {
+    position: fixed;
+    left: $panel-width;
+    top: 0;
+    display: flex;
+
+    .GWiDP{
+      border-radius: 2px;
+      min-width: calc(100% - 100px);
+      min-height: calc(100% - 100px);
+      display: flex;
+    }
+  }
+}
+
+
