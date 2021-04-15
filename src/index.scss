@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,7 +13,7 @@ code {
     monospace;
 }
 
-$panel-width: 400px;
+$panel-width: 24vw;
 
 .cat-panel {
   width: $panel-width;
@@ -29,10 +30,16 @@ $panel-width: 400px;
   transition: height 0.2s cubic-bezier(.32,1.13,.67,1.75);
   display: block;
   margin: 10px;
+
+  &:hover {
+    background: orange;
+  }
 }
 
 .bar-and-text {
   display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .cat-display {
@@ -52,7 +59,13 @@ $panel-width: 400px;
   height: 180px;
   width: 180px;
   margin: 45px;
+  font-size: 20px;
+  font-weight: 300;
+  align-items: center;
 
+  .caption {
+    margin-top: 7px;
+  }
   img {
     display: block;
     transition: width 0.2s cubic-bezier(.32,1.13,.67,1.75), height 0.2s cubic-bezier(.32,1.13,.67,1.75), transform 0.2s cubic-bezier(.32,1.13,.67,1.75);
@@ -76,26 +89,77 @@ $panel-width: 400px;
 
   img {
     display: inline-block;
-    width: 300px;
-    height: 300px;
+    float: left;
+    margin-left: 60px;
+    margin-top: 30px;
+    width: 20vw;
+    height: 20vw;
   }
 
   .cat-info {
+    float: left;
+    width: 30vw;
+    margin-left: 100px;
+    text-align: left;
     display: inline-block;
+    padding-top: 40px;
+
+    .breed-name {
+      font-size: 60px;
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+
+    .facts-title, .alt-name {
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      margin: 0
+    }
+
+    .metadata {
+      font-size: 20px;
+      font-weight: 600;
+        margin: 5px 0;
+    }
+
+    .description {
+      font-size: 20px;
+      font-weight: 400;
+      margin-top: 30px;
+
+      div {
+        margin: 10px 0;
+      }
+    }
+
+    .history {
+      font-size: 20px;
+      font-weight: 300;
+      margin-top: 30px;
+
+      div {
+        margin: 10px 0;
+      }
+    }
   }
 }
 
+
+// popup
 .all-cats {
   .aPPpx {
     position: fixed;
     left: $panel-width;
     top: 0;
     display: flex;
+    background: #f0f0f0;
+    z-index: 1;
 
     .GWiDP{
       border-radius: 2px;
-      min-width: calc(100% - 100px);
-      min-height: calc(100% - 100px);
+      min-width: calc(100% - 130px);
+      min-height: calc(100% - 130px);
       display: flex;
     }
   }

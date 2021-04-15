@@ -8,12 +8,14 @@ const CatDetail = ({cat, selectCat}) => (
       <div className="cat-info">
         <div className="breed-name">{cat.breed.replace( /([A-Z])/g, " $1" )}</div>
         {
-          !!cat["Alternate names"] &&
-          <div className="alt-name">Also Called: {cat["Alternate names"].join(', ')} </div>
+          cat["Alternate names"]  ?
+          <div className="alt-name">Also Called: {cat["Alternate names"].join(', ')} </div> :
+            <div className="facts-title">Facts: </div>
         }
         <div className="metadata">
           <div className="size">{cat.size.join(' / ')}</div>
           <div className="weight">{cat.weight.join(' to ')} lb</div>
+          <div className="hair">{cat["hair length"].join(' / ')} hair</div>
           <div className="shedding">{cat.shedding} shedding</div>
           <div className="grooming">{cat.grooming} grooming</div>
         </div>

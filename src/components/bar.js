@@ -1,14 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import _ from 'lodash';
 
 
 
 const Bar = ({ category, height, clickFunction, isOn }) => {
+  const [hover, setHover] = useState(false)
   return (
     <div
       className="bar"
-      style={{height: height, width: "50px", background: (isOn ? "lightgreen": "grey")}}
-      onClick={() => clickFunction(category) }
+      style={{
+        height: height,
+        width: "50px",
+        background: (
+          hover? "orange" :
+            (isOn ? "orange": "grey")
+        )
+      }}
+      onClick={() => clickFunction(category)}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     />
   )
 };
