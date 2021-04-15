@@ -16,13 +16,11 @@ const CatPanel = ({toggleSize, sizeFilter}) => {
 
   return (
     <div className="cat-panel">
-
       <BarChart
         data={catSizeData}
         clickFunction={toggleSize}
         currentFilter={sizeFilter}
       />
-
     </div>
   )
 }
