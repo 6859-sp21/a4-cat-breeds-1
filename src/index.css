@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.cat-panel {
+  width: 400px;
+  height: 100vh;
+  position: fixed;
+  background: olive;
+}
+
+.bar-chart {
+  display: block;
+}
+
+.bar {
+  display: block;
+  margin: 10px;
+}
+
+.bar-and-text {
+  display: inline-block;
+}
+
+.cat-display {
+  background: white
+}
+
+.cat-card {
+  
+}

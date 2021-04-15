@@ -1,23 +1,16 @@
 import './App.css';
 import React, {Component} from 'react';
 import catData from './cat_metadata.json';
+import CatPanel from './components/catPanel.js';
+import CatDisplay from "./components/cats";
 
 function App() {
-        return (
-            <div className="App">
-                <svg width={1000} height={1000}>
-                    {catData.map((cat, i) => (
-                        <circle
-                            key={i}
-                            cx={(i * 100) + 30}
-                            cy="60"
-                            r={cat.weight[0]}
-                            style={{ fill: 'steelblue' }}
-                        />
-                    ))}
-                </svg>
-            </div>
-        );
+    return (
+      <div className="App">
+        <CatPanel />
+        <CatDisplay />
+      </div>
+    );
 }
 
 export default App;
