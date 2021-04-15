@@ -13,13 +13,16 @@ code {
     monospace;
 }
 
-$panel-width: 24vw;
 
+
+
+// left
+$panel-width: 24vw;
 .cat-panel {
   width: $panel-width;
   height: 100vh;
   position: fixed;
-  background: olive;
+  background: #fafafa;
 }
 
 .bar-chart {
@@ -41,6 +44,11 @@ $panel-width: 24vw;
   font-size: 14px;
   font-weight: 500;
 }
+
+
+
+
+// right
 
 .cat-display {
   background: #f0f0f0;
@@ -147,22 +155,23 @@ $panel-width: 24vw;
 
 
 // popup
-.all-cats {
-  .aPPpx {
-    position: fixed;
-    left: $panel-width;
-    top: 0;
+.popup-lib {
+  .skylight-overlay {
+    visibility: hidden;
+  }
+  .skylight-dialog {
+    position: fixed !important;
+    left: $panel-width !important;
+    top: 0 !important;
+    margin: 25px !important;
+    width: calc(76vw - 80px) !important;
+    height: calc(100vh - 80px) !important;
     display: flex;
     background: #f0f0f0;
     z-index: 1;
 
-    .GWiDP{
-      border-radius: 2px;
-      min-width: calc(100% - 130px);
-      min-height: calc(100% - 130px);
-      display: flex;
-    }
   }
 }
+
 
 

@@ -3,7 +3,8 @@ import catData from "../cat_metadata.json";
 import CatPreview from './catPreview.js';
 import CatDetail from './catDetail.js';
 import FlipMove from 'react-flip-move';
-import Popup from 'react-animated-popup';
+// import Popup from 'react-animated-popup';
+import {SkyLightStateless} from "react-skylight";
 
 
 const CatDisplay = ({sizeFilter}) => {
@@ -18,18 +19,17 @@ const CatDisplay = ({sizeFilter}) => {
   return (
     <div className="all-cats">
 
-      <Popup className="popup-lib"
-             visible={selectedCat !== ""}
-             onClose={() => selectCat("")}
+      <SkyLightStateless className="popup-lib"
+                         hideOnOverlayClicked
+                         isVisible={selectedCat !== ""}
+                         onCloseClicked={() => selectCat("")}
       >
         <CatDetail
           cat={catData.filter((cat) => (cat.breed===selectedCat))[0]}
           selectCat={selectCat}
         />
-      </Popup>
-      {/*<div className="cat-details" style={{visibility:  ? "visible" : "hidden"}}>*/}
+      </SkyLightStateless>
 
-      {/*</div>*/}
       <div className="cat-display">
         <FlipMove className="flip-move">
           {
