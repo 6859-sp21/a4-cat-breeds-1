@@ -7,7 +7,11 @@ import FlipMove from 'react-flip-move';
 import {SkyLightStateless} from "react-skylight";
 
 
-const CatDisplay = ({sizeFilter}) => {
+const CatDisplay = (
+  {
+    sizeFilter,
+    sheddingFilter
+}) => {
 
   const [selectedCat, setSelectedCat] = useState("");
 
@@ -35,15 +39,22 @@ const CatDisplay = ({sizeFilter}) => {
           {
             catData
               .filter((cat) => {
-                let result = false;
-                if (cat.size != null) {
+                let sizeResult = false;
+                let sheddingResult = false;
+                if (cat.size != null && cat.shedding != null) {
                   for (const size of cat.size) {
                     if (sizeFilter[size]) {
-                      result = true;
+                      sizeResult = true;
+                    }
+                  }
+
+                  for (const shedding of cat.shedding) {
+                    if (sheddingFilter[shedding]) {
+                      sheddingResult = true;
                     }
                   }
                 }
-                return result;
+                return sizeResult && sheddingResult;
               })
               .map((cat, i) =>
                 <CatPreview cat={cat} selectCat={selectCat} key={cat.breed} />

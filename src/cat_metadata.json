@@ -1640,7 +1640,7 @@
         "weight": [
             "8", 
             "15"
-        ], 
+        ],
         "Image": "", 
         "breed": "EuropeanShorthair", 
         "Recognized by": [
@@ -1662,7 +1662,8 @@
         ], 
         "type of breed": [
             "natural"
-        ], 
+        ],
+        "hair length": ["short"],
         "Description": "Large cat with a wide body and short, thin limbs\nCoat is always blue in color, and is double, with a wooly and water-resistant top coat\nRounded head and long muzzle gives them a smiling appearance\nEyes are large and contrast in color with its coat", 
         "Recognized by": [
             "American Association of Cat Enthusiasts  (AACE)", 
