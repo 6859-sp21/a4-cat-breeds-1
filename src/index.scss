@@ -48,9 +48,11 @@ code {
   margin: 45px;
 
   img {
+    display: block;
     transition: width 0.2s cubic-bezier(.32,1.13,.67,1.75), height 0.2s cubic-bezier(.32,1.13,.67,1.75), transform 0.2s cubic-bezier(.32,1.13,.67,1.75);
     height: 180px;
     width: 180px;
+    margin: auto;
 
     &:hover {
       height: 200px;
@@ -59,11 +61,22 @@ code {
   }
 }
 
-.cat-detail {
+.popup {
   position: fixed;
   width: 800px;
   height: 800px;
-  top: 0;
-  left: 300px;
+  top: 20px;
+  left: 420px;
   background: white;
+
+  img {
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+  }
+
+  .cat-info {
+    display: inline-block;
+
+  }
 }
