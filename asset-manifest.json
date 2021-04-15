@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "//6859-sp21.github.io/a4-cat-breeds-1/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "//6859-sp21.github.io/a4-cat-breeds-1/static/js/main.e60c28c8.chunk.js",
-    "main.js.map": "//6859-sp21.github.io/a4-cat-breeds-1/static/js/main.e60c28c8.chunk.js.map",
-    "runtime-main.js": "//6859-sp21.github.io/a4-cat-breeds-1/static/js/runtime-main.43ff5879.js",
-    "runtime-main.js.map": "//6859-sp21.github.io/a4-cat-breeds-1/static/js/runtime-main.43ff5879.js.map",
-    "static/js/2.9334f117.chunk.js": "//6859-sp21.github.io/a4-cat-breeds-1/static/js/2.9334f117.chunk.js",
-    "static/js/2.9334f117.chunk.js.map": "//6859-sp21.github.io/a4-cat-breeds-1/static/js/2.9334f117.chunk.js.map",
-    "static/js/3.7ced972e.chunk.js": "//6859-sp21.github.io/a4-cat-breeds-1/static/js/3.7ced972e.chunk.js",
-    "static/js/3.7ced972e.chunk.js.map": "//6859-sp21.github.io/a4-cat-breeds-1/static/js/3.7ced972e.chunk.js.map",
-    "index.html": "//6859-sp21.github.io/a4-cat-breeds-1/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "//6859-sp21.github.io/a4-cat-breeds-1/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.9334f117.chunk.js.LICENSE.txt": "//6859-sp21.github.io/a4-cat-breeds-1/static/js/2.9334f117.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "//6859-sp21.github.io/a4-cat-breeds-1/static/media/logo.6ce24c58.svg"
+    "main.css": "/a4-cat-breeds-1/static/css/main.57637235.chunk.css",
+    "main.js": "/a4-cat-breeds-1/static/js/main.bbf6f1af.chunk.js",
+    "main.js.map": "/a4-cat-breeds-1/static/js/main.bbf6f1af.chunk.js.map",
+    "runtime-main.js": "/a4-cat-breeds-1/static/js/runtime-main.2cd13cd6.js",
+    "runtime-main.js.map": "/a4-cat-breeds-1/static/js/runtime-main.2cd13cd6.js.map",
+    "static/js/2.7b5f062b.chunk.js": "/a4-cat-breeds-1/static/js/2.7b5f062b.chunk.js",
+    "static/js/2.7b5f062b.chunk.js.map": "/a4-cat-breeds-1/static/js/2.7b5f062b.chunk.js.map",
+    "static/js/3.6c9a695e.chunk.js": "/a4-cat-breeds-1/static/js/3.6c9a695e.chunk.js",
+    "static/js/3.6c9a695e.chunk.js.map": "/a4-cat-breeds-1/static/js/3.6c9a695e.chunk.js.map",
+    "index.html": "/a4-cat-breeds-1/index.html",
+    "static/css/main.57637235.chunk.css.map": "/a4-cat-breeds-1/static/css/main.57637235.chunk.css.map",
+    "static/js/2.7b5f062b.chunk.js.LICENSE.txt": "/a4-cat-breeds-1/static/js/2.7b5f062b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.43ff5879.js",
-    "static/js/2.9334f117.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.e60c28c8.chunk.js"
+    "static/js/runtime-main.2cd13cd6.js",
+    "static/js/2.7b5f062b.chunk.js",
+    "static/css/main.57637235.chunk.css",
+    "static/js/main.bbf6f1af.chunk.js"
   ]
 }
