@@ -14,17 +14,6 @@ const CatPanel = ({toggleSize, sizeFilter}) => {
     }
   }
 
-  // const [sizeFilter, setSizeFilter] = useState({
-  //   small: true,
-  //   medium: true,
-  //   large: true
-  // });
-  //
-  // const toggleSize = (categoryToggled) => {
-  //   console.log("toggle size " + categoryToggled + " to " + !sizeFilter[categoryToggled]);
-  //   setSizeFilter({...sizeFilter, [categoryToggled]: !sizeFilter[categoryToggled]})
-  // }
-
   return (
     <div className="cat-panel">
 

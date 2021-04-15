@@ -33,9 +33,37 @@ code {
 }
 
 .cat-display {
-  background: white
+  background: #f0f0f0;
+  position: absolute;
+  top: 0;
+  left: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: -1;
 }
 
 .cat-card {
+  height: 180px;
+  width: 180px;
+  margin: 45px;
 
+  img {
+    transition: width 0.2s cubic-bezier(.32,1.13,.67,1.75), height 0.2s cubic-bezier(.32,1.13,.67,1.75), transform 0.2s cubic-bezier(.32,1.13,.67,1.75);
+    height: 180px;
+    width: 180px;
+
+    &:hover {
+      height: 200px;
+      width: 200px;
+    }
+  }
+}
+
+.cat-detail {
+  position: fixed;
+  width: 800px;
+  height: 800px;
+  top: 0;
+  left: 300px;
+  background: white;
 }
