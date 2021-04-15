@@ -4,7 +4,7 @@ import BarChart from "./bar.js";
 import _ from 'lodash';
 
 
-const CatPanel = () => {
+const CatPanel = ({toggleSize, sizeFilter}) => {
   let catSizeData = {small: 0, medium: 0, large: 0};
   for (const cat of catData) {
     for (const sizeKey of Object.keys(catSizeData)) {
@@ -14,16 +14,16 @@ const CatPanel = () => {
     }
   }
 
-  const [sizeFilter, setSizeFilter] = useState({
-    small: true,
-    medium: true,
-    large: true
-  });
-
-  const toggleSize = (categoryToggled) => {
-    console.log("toggle size " + categoryToggled + " to " + !sizeFilter[categoryToggled]);
-    setSizeFilter({...sizeFilter, [categoryToggled]: !sizeFilter[categoryToggled]})
-  }
+  // const [sizeFilter, setSizeFilter] = useState({
+  //   small: true,
+  //   medium: true,
+  //   large: true
+  // });
+  //
+  // const toggleSize = (categoryToggled) => {
+  //   console.log("toggle size " + categoryToggled + " to " + !sizeFilter[categoryToggled]);
+  //   setSizeFilter({...sizeFilter, [categoryToggled]: !sizeFilter[categoryToggled]})
+  // }
 
   return (
     <div className="cat-panel">
