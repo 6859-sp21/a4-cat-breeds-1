@@ -1,9 +1,9 @@
 import React from "react";
 
 const CatDetail = ({cat, selectCat}) => (
-  <div className="popup">
+  <div className="popup" onClick={() => selectCat("")}>
     {!!cat &&
-    <div >
+    <div>
       <img src= {process.env.PUBLIC_URL + "/cat_pictures/" +cat.breed + '.jpg'} alt={cat.breed} />
       <div className="cat-info">
         <div className="breed-name">{cat.breed.replace( /([A-Z])/g, " $1" )}</div>

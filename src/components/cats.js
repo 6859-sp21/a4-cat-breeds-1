@@ -3,6 +3,7 @@ import catData from "../cat_metadata.json";
 import CatPreview from './catPreview.js';
 import CatDetail from './catDetail.js';
 import FlipMove from 'react-flip-move';
+import Popup from 'react-animated-popup';
 
 
 const CatDisplay = ({sizeFilter}) => {
@@ -16,12 +17,19 @@ const CatDisplay = ({sizeFilter}) => {
 
   return (
     <div className="all-cats">
-      <div className="cat-details" style={{visibility: selectedCat !== "" ? "visible" : "hidden"}}>
+
+      <Popup className="popup-lib"
+             visible={selectedCat !== ""}
+             onClose={() => selectCat("")}
+      >
         <CatDetail
           cat={catData.filter((cat) => (cat.breed===selectedCat))[0]}
           selectCat={selectCat}
         />
-      </div>
+      </Popup>
+      {/*<div className="cat-details" style={{visibility:  ? "visible" : "hidden"}}>*/}
+
+      {/*</div>*/}
       <div className="cat-display">
         <FlipMove className="flip-move">
           {

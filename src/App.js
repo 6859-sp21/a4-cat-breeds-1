@@ -1,6 +1,5 @@
 import './App.css';
-import React, {Component, useState} from 'react';
-import catData from './cat_metadata.json';
+import React, {useState} from 'react';
 import CatPanel from './components/catPanel.js';
 import CatDisplay from "./components/cats";
 
@@ -13,7 +12,6 @@ const App = () => {
   });
 
   const toggleSize = (categoryToggled) => {
-    console.log("toggle size " + categoryToggled + " to " + !sizeFilter[categoryToggled]);
     setSizeFilter({...sizeFilter, [categoryToggled]: !sizeFilter[categoryToggled]})
   }
 

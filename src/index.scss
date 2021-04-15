@@ -12,8 +12,10 @@ code {
     monospace;
 }
 
+$panel-width: 400px;
+
 .cat-panel {
-  width: 400px;
+  width: $panel-width;
   height: 100vh;
   position: fixed;
   background: olive;
@@ -24,6 +26,7 @@ code {
 }
 
 .bar {
+  transition: height 0.2s cubic-bezier(.32,1.13,.67,1.75);
   display: block;
   margin: 10px;
 }
@@ -36,7 +39,7 @@ code {
   background: #f0f0f0;
   position: absolute;
   top: 0;
-  left: 400px;
+  left: $panel-width;
   z-index: -1;
 
   .flip-move {
@@ -64,22 +67,38 @@ code {
   }
 }
 
+
+
 .popup {
-  position: fixed;
-  width: 800px;
-  height: 800px;
-  top: 20px;
-  left: 420px;
+  min-width: 100%;
+  min-height: 100%;
   background: white;
 
   img {
     display: inline-block;
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
   }
 
   .cat-info {
     display: inline-block;
-
   }
 }
+
+.all-cats {
+  .aPPpx {
+    position: fixed;
+    left: $panel-width;
+    top: 0;
+    display: flex;
+
+    .GWiDP{
+      border-radius: 2px;
+      min-width: calc(100% - 100px);
+      min-height: calc(100% - 100px);
+      display: flex;
+    }
+  }
+}
+
+
