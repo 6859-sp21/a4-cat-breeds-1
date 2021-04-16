@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/a4-cat-breeds-1/static/css/main.d26af0a2.chunk.css",
-    "main.js": "/a4-cat-breeds-1/static/js/main.af876603.chunk.js",
-    "main.js.map": "/a4-cat-breeds-1/static/js/main.af876603.chunk.js.map",
+    "main.css": "/a4-cat-breeds-1/static/css/main.3c8fdbde.chunk.css",
+    "main.js": "/a4-cat-breeds-1/static/js/main.ba38dc8e.chunk.js",
+    "main.js.map": "/a4-cat-breeds-1/static/js/main.ba38dc8e.chunk.js.map",
     "runtime-main.js": "/a4-cat-breeds-1/static/js/runtime-main.19a2ae60.js",
     "runtime-main.js.map": "/a4-cat-breeds-1/static/js/runtime-main.19a2ae60.js.map",
     "static/js/2.08d14c16.chunk.js": "/a4-cat-breeds-1/static/js/2.08d14c16.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.3d216e7c.chunk.js": "/a4-cat-breeds-1/static/js/3.3d216e7c.chunk.js",
     "static/js/3.3d216e7c.chunk.js.map": "/a4-cat-breeds-1/static/js/3.3d216e7c.chunk.js.map",
     "index.html": "/a4-cat-breeds-1/index.html",
-    "static/css/main.d26af0a2.chunk.css.map": "/a4-cat-breeds-1/static/css/main.d26af0a2.chunk.css.map",
+    "static/css/main.3c8fdbde.chunk.css.map": "/a4-cat-breeds-1/static/css/main.3c8fdbde.chunk.css.map",
     "static/js/2.08d14c16.chunk.js.LICENSE.txt": "/a4-cat-breeds-1/static/js/2.08d14c16.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.19a2ae60.js",
     "static/js/2.08d14c16.chunk.js",
-    "static/css/main.d26af0a2.chunk.css",
-    "static/js/main.af876603.chunk.js"
+    "static/css/main.3c8fdbde.chunk.css",
+    "static/js/main.ba38dc8e.chunk.js"
   ]
 }
