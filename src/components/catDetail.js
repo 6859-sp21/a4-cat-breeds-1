@@ -28,7 +28,7 @@ const CatDetail = ({cat, selectCat}) => (
         </div>
       </div>
 
-      <div className="close-button" onClick={() => selectCat("")}>close</div>
+      {/*<div className="close-button" onClick={() => selectCat("")}>close</div>*/}
     </div>
     }
   </div>

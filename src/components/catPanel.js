@@ -3,13 +3,28 @@ import React, {useState, useEffect} from "react";
 import BarChart from "./bar.js";
 import _ from 'lodash';
 
+const Title = () => (
+  <div className="title">
+    <div className="catology">
+      <span className="cat">Cat</span>
+      <span className="ology">ology</span>
+    </div>
+    <div className="description">
+      Catology is what anyone who owns a cat is doomed to practice for
+      the rest of their pet's natual life. Little do most cat owners realize
+      that they are being pulled into this dangerous cult of cats.
+    </div>
+  </div>
+)
 
 const CatPanel = (
   {
     toggleSize,
     sizeFilter,
     toggleShedding,
-    sheddingFilter
+    sheddingFilter,
+    toggleHair,
+    hairFilter
   }) => {
   let catSizeData = {small: 0, medium: 0, large: 0};
   for (const cat of catData) {
@@ -29,17 +44,35 @@ const CatPanel = (
       }
     }
 
+  let catHairData = {short: 0, medium: 0, long: 0};
+  for (const cat of catData) {
+    for (const key of Object.keys(catHairData)) {
+      if (_.includes(cat["hair length"], key)) {
+        catHairData[key] ++;
+      }
+    }
+  }
+
       return (
     <div className="cat-panel">
+      <Title />
       <BarChart
         data={catSizeData}
         clickFunction={toggleSize}
         currentFilter={sizeFilter}
+        title="Size"
+      />
+      <BarChart
+        data={catHairData}
+        clickFunction={toggleHair}
+        currentFilter={hairFilter}
+        title = "Hair Length"
       />
       <BarChart
         data={catSheddingData}
         clickFunction={toggleShedding}
         currentFilter={sheddingFilter}
+        title = "Shedding"
       />
     </div>
   )

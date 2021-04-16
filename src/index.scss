@@ -6,6 +6,7 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #323232;
 }
 
 code {
@@ -14,11 +15,11 @@ code {
 }
 
 
-
-
 // left
+$orange: #ff9107;
 $panel-width: 24vw;
 .cat-panel {
+  font-family: 'Roboto', sans-serif;
   width: $panel-width;
   height: 100vh;
   position: fixed;
@@ -26,24 +27,61 @@ $panel-width: 24vw;
 }
 
 .bar-chart {
+  margin-left: 40px;
+  margin-right: 40px;
   display: block;
-}
+  text-align: left;
 
-.bar {
-  transition: height 0.2s cubic-bezier(.32,1.13,.67,1.75);
-  display: block;
-  margin: 10px;
+  .title {
+    margin-left: 0;
+    margin-bottom: 5px;
+    margin-top: 20px;
 
-  &:hover {
-    background: orange;
+  }
+
+  .bar-and-text {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+
+    .bar {
+      transition: height 0.4s ease;
+      display: block;
+      width: 80px;
+
+      &:hover {
+        background: grey;
+      }
+    }
+
+    .text {
+      width: 80px;
+      margin-right: 5px;
+      margin-top: 5px;
+      text-align: center;
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      .div {
+        margin: 5px;
+      }
+    }
+
+  }
+  .all-button {
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+
+    &:hover {
+      background: grey;
+    }
   }
 }
 
-.bar-and-text {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 500;
-}
+
+
+
 
 
 
@@ -171,7 +209,35 @@ $panel-width: 24vw;
     z-index: 1;
 
   }
+
+  .skylight-close-button {
+    visibility: hidden;
+  }
 }
 
 
+// title
+.title {
+  text-align: left;
+  margin-left: 40px;
+  margin-top: 70px;
+  margin-right: 40px;
 
+  .catology {
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    .cat {
+      color: $orange;
+    }
+    .ology {
+      color: #5a5a5a;
+    }
+  }
+
+  .description {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
