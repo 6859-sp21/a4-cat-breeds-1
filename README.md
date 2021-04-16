@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+## Design Choices
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In the assignment, I made 3 main design decisions: (1) how to contextualize a cat in the dataset, (2) the logic of the left-hand side panel and (3) whether to have the “close” button on the cat card. I will explain them one by one in the following paragraphs.
 
-## Available Scripts
+The “highlight” and “histogram” functionalities are the most important features in this visualization. Without them, this visualization is just a filtering tool. ”Histogram” shows the distribution of certain qualities of the cat and thus allows the user to have a vague idea such as “most cats have short hair”. “Highlight” allows the user to contextualize the cat that they are currently looking at in the cat pool. By directly showing the metadata of the cat in the panel, the user will have a clear idea of “how does my cat compare to other cats”.
 
-In the project directory, you can run:
+The logic of the left-hand-side panel is a bit hard to figure out. I opt for an “or” logic for the cat size, hair length and shedding and an “and” logic for cat temperament. In particular, when a user selects both “long hair” and “short hair”, they mean “I want a cat that is either long hair or short hair”. When a use selects “affectionate” and “playful”, they mean that “I want a cat that is both affectionate and playful”. The logic of different filters combine with “and”. I choose to do it this way because the options in the first three filters are almost mutually exclusive, and combining with an “and” logic doesn’t make sense, while in the cat temper, it makes sense to logically combine different options with an “and”.
 
-### `yarn start`
+When I first designed the visualization, I wanted the cat card (the detail pages) to have a close button and the users will click the close button to close the cat card and continue on the filtering. However, I made this decision to not have a close button but instead have the user click on anywhere to close a cat card. This comes at a cost that the user is no longer able to copy and paste info from the page, but I believe it will greatly enhance the number of cat that a person touches on and thus allow the user to have a better whole-picture of different cat breeds.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Development Process
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I did not collaborate with anyone in this assignment.
+In terms of workload, my situation is a bit different. I checked in with the TAs about this so this is indeed allowed. Before submitting this assignment, I already had a working prototype here for my other class. Note that although it looks very similar to my current website, it was implemented in a completely different library/language. The old website was implemented in p5.js three years ago and the new one is implemented in React.js. I choose to do this because I don’t think p5 is a good library to perform this task since it is CPU consuming and doesn’t directly interact with the dom. For example, the left hand side panel in the old website was completely fake and cannot be fixed so I had to remove it when the user scrolled down. Also, the design has changed in that I added the highlight and histogram features, which turns it from a one-way filter to a two-way visualization.
+The most time was spent on (1) researching on how to connect d3 with React (2) find out how to implement the two-way data flow in React and (3) actually implementing everything in React.
+The first part took me about a day, both to learn d3 and to find out ways to connect it with React and try to get the data out. In the end, I found that it’s just easier to directly interact with the DOM in React since my design is entirely rectangular.
+The second part also took about a day. I relearned React on how to trigger a state change in a component’s child object as well as how to have other children reflect the change. In particular, this is reflected in the filter function (from panels to cat display) and the highlight function (from cat display to panels)
+The third part also took about a day. After I figured out a minimum working prototype in React, I made various components and tweaked the CSS. All of them together took about an entire day, which is around 14 hours.
 
-### `yarn test`
+## Data Source
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Data Source
+Wolfram Alpha API
 
-### `yarn build`
+### Site Name
+James Grady
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Picture Source
+vetstreet.com
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+cat-breeds-encyclopedia.com
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+cattime.com
 
-### `yarn eject`
+pets4homes.com
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+omlet.co.uk
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+petguide.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+burmilla.us
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+catbreedselector.com
 
-## Learn More
+petpaw.com.au
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+my-pet-shop-ds.wikia.com
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+purina.com
 
-### Code Splitting
+purrfectcatbreeds.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+gccfcats.org
 
-### Analyzing the Bundle Size
+cat-breed-info.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+localkittensforsale.com
