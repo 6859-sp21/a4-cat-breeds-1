@@ -11,6 +11,7 @@ const App = () => {
     setSelectedCat(catName);
   }
 
+
   const [temperFilter, setTemperFilter] = useState({
     "affectionate" : true,
     "active": true,
@@ -218,6 +219,14 @@ const App = () => {
     setHairFilter(newHairFilter);
   }
 
+
+  const restartFilter = () => {
+    toggleSize("all")
+    toggleHair("all")
+    toggleShedding("all")
+    toggleTemper("all")
+  }
+
     return (
       <div className="App">
         <CatPanel toggleSize={toggleSize}
@@ -237,6 +246,7 @@ const App = () => {
           hairFilter={hairFilter}
           temperFilter={temperFilter}
           selectCatMain={selectCatMain}
+          restartFilter={restartFilter}
         />
       </div>
     );

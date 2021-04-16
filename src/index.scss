@@ -248,3 +248,29 @@ $panel-width: 400px;
     font-weight: 300;
   }
 }
+
+.no-more-cats {
+  width: 500px;
+  margin: 80px;
+  font-size: 40px;
+  font-weight: 200;
+  background: #fafafa;
+  padding: 60px;
+  text-align: center;
+
+
+  .restart-filter {
+    margin: auto;
+    margin-top: 60px;
+    font-size: 24px;
+    font-weight: 500;
+    width: 200px;
+    padding: 20px;
+
+    background: lightgrey;
+    &:hover {
+      background: grey;
+    }
+  }
+
+}
