@@ -98,7 +98,7 @@ const BarChart = ({
               category={key}
               clickFunction={clickFunction}
               isOn={!isAllTrue && currentFilter[key]}
-              width = {allWidth / Object.keys(data).length}
+              width = {(allWidth+5) / Object.keys(data).length - 5}
               key={`bar${key}`}
               highlight={highlight ? _.includes(highlight, key) : false}
             />
@@ -106,7 +106,7 @@ const BarChart = ({
               category={key}
               clickFunction={clickFunction}
               isOn={!isAllTrue && currentFilter[key]}
-              width = {allWidth / Object.keys(data).length}
+              width = { (allWidth+5) / Object.keys(data).length - 5}
               key={`text${key}`}
               highlight={highlight ? _.includes(highlight, key) : false}
             />
@@ -162,7 +162,7 @@ const TemperList = (
               category={key}
               clickFunction={clickFunction}
               isOn={!isAllTrue && currentFilter[key]}
-              width = {allWidth / 2}
+              width = {(allWidth+5) / 2-5}
               key={`text${key}`}
               highlight={highlight ? _.includes(highlight, key) : false}
             />
