@@ -18,6 +18,7 @@ const CatDisplay = (
 }) => {
 
   const [selectedCat, setSelectedCat] = useState("");
+  const [showSource, setShowSource] = useState(false);
 
   const selectCat = (catName) => {
     setSelectedCat(catName);
@@ -118,6 +119,93 @@ const CatDisplay = (
                onClick={restartFilter}
           >
             Restart
+          </div>
+        </div>
+
+        <div className="source-button"
+             onClick={() => setShowSource(!showSource)}
+             style={
+               {visibility: (filteredCats.length!==0) ? "visible" :"hidden"}
+             }
+        >
+          Show Sources
+        </div>
+        <div className="source"
+             style={
+               {visibility: (showSource && filteredCats.length!==0) ? "visible" :"hidden"}
+             }
+        >
+
+          <div
+          >
+            <div className="source-title">
+              Data Source
+            </div>
+
+            <div>
+              Wolfram Alpha API
+            </div>
+          </div>
+          <div>
+            <div className="source-title">
+              Site Name
+            </div>
+            <div>
+              James Grady
+            </div>
+          </div>
+          <div>
+            <div className="source-title">
+              Picture Source
+            </div>
+            <div>
+              <div>
+                vetstreet.com
+              </div>
+              <div>
+                cat-breeds-encyclopedia.com
+              </div>
+              <div>
+                cattime.com
+              </div>
+              <div>
+                pets4homes.com
+              </div>
+              <div>
+                omlet.co.uk
+              </div>
+              <div>
+                petguide.com
+              </div>
+              <div>
+                burmilla.us
+              </div>
+              <div>
+                catbreedselector.com
+              </div>
+              <div>
+                petpaw.com.au
+              </div>
+              <div>
+                my-pet-shop-ds.wikia.com
+              </div>
+              <div>
+                purina.com
+              </div>
+              <div>
+                purrfectcatbreeds.com
+              </div>
+              <div>
+                gccfcats.org
+              </div>
+              <div>
+                cat-breed-info.com
+              </div>
+              <div>
+                localkittensforsale.com
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

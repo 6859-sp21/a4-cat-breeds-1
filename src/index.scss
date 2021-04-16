@@ -274,3 +274,24 @@ $panel-width: 400px;
   }
 
 }
+
+.source-button {
+  margin: auto;
+  margin-top: -200px;
+  width: 160px;
+  padding: 5px;
+  font-weight: 300;
+  &:hover {
+    background: lightgrey;
+  }
+}
+
+.source {
+  font-weight: 300;
+  .source-title {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+}
+
