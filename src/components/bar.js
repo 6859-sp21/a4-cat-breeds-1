@@ -2,13 +2,15 @@ import React, {useState} from "react";
 import _ from 'lodash';
 
 const allWidth = 300;
+const orange = "#f2a84e";
 
 const Bar = ({
-    category,
-    height,
-    width,
-    clickFunction,
-    isOn
+  category,
+  height,
+  width,
+  clickFunction,
+  isOn,
+  highlight
 }) => {
   const [hover, setHover] = useState(false)
   return (
@@ -18,6 +20,8 @@ const Bar = ({
         height: height,
         width: width,
         background: (
+          highlight ?
+            orange:
           hover? "grey" :
             (isOn ? "grey": "lightgrey")
         )
@@ -34,7 +38,8 @@ const TextButton = ({
   category,
   width,
   clickFunction,
-  isOn
+  isOn,
+  highlight
                     }) =>
 {
   const [hover, setHover] = useState(false)
@@ -44,9 +49,11 @@ const TextButton = ({
       style = {
         {
           background: (
-            hover? "grey" :
-              (isOn ? "grey": "lightgrey")
-          ),
+        highlight ?
+        orange :
+        hover? "grey" :
+        (isOn ? "grey": "lightgrey")
+        ),
           width: width
         }
       }
@@ -67,7 +74,8 @@ const BarChart = ({
                     data,
                     clickFunction,
                     currentFilter,
-                    title
+                    title,
+                    highlight
 }) => {
   let isAllTrue = true;
   for (const key of Object.keys(data)) {
@@ -77,8 +85,6 @@ const BarChart = ({
   }
 
   const [hover, setHover] = useState(false)
-
-
   return (
     <div className="bar-chart">
       <div className="title">
@@ -88,12 +94,13 @@ const BarChart = ({
         return (
           <div className="bar-and-text" key={key}>
             <Bar
-              height={isAllTrue ? 0 : value}
+              height={(!highlight && isAllTrue) ? 0 : value}
               category={key}
               clickFunction={clickFunction}
               isOn={!isAllTrue && currentFilter[key]}
               width = {allWidth / Object.keys(data).length}
               key={`bar${key}`}
+              highlight={highlight ? _.includes(highlight, key) : false}
             />
             <TextButton
               category={key}
@@ -101,8 +108,8 @@ const BarChart = ({
               isOn={!isAllTrue && currentFilter[key]}
               width = {allWidth / Object.keys(data).length}
               key={`text${key}`}
+              highlight={highlight ? _.includes(highlight, key) : false}
             />
-
 
           </div>
         )
@@ -125,5 +132,6 @@ const BarChart = ({
     </div>
   );
 }
+
 
 export default BarChart;

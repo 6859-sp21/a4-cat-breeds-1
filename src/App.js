@@ -2,9 +2,14 @@ import './App.css';
 import React, {useState} from 'react';
 import CatPanel from './components/catPanel.js';
 import CatDisplay from "./components/cats";
-import size from "d3-selection/src/selection/size";
 
 const App = () => {
+
+  const [selectedCat, setSelectedCat] = useState("");
+
+  const selectCatMain = (catName) => {
+    setSelectedCat(catName);
+  }
 
   const [sizeFilter, setSizeFilter] = useState({
     small: true,
@@ -132,10 +137,12 @@ const App = () => {
                   sheddingFilter={sheddingFilter}
                   toggleHair={toggleHair}
                   hairFilter={hairFilter}
+                  selectedCat = {selectedCat}
         />
         <CatDisplay
           sizeFilter={sizeFilter}
           sheddingFilter={sheddingFilter}
+          selectCatMain={selectCatMain}
         />
       </div>
     );

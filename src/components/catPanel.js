@@ -19,6 +19,7 @@ const Title = () => (
 
 const CatPanel = (
   {
+    selectedCat,
     toggleSize,
     sizeFilter,
     toggleShedding,
@@ -53,6 +54,8 @@ const CatPanel = (
     }
   }
 
+  const selectedCatInfo = _.find(catData, (cat) => cat.breed===selectedCat);
+
       return (
     <div className="cat-panel">
       <Title />
@@ -61,18 +64,21 @@ const CatPanel = (
         clickFunction={toggleSize}
         currentFilter={sizeFilter}
         title="Size"
+        highlight={selectedCatInfo ? selectedCatInfo.size : null}
       />
       <BarChart
         data={catHairData}
         clickFunction={toggleHair}
         currentFilter={hairFilter}
         title = "Hair Length"
+        highlight={selectedCatInfo ? selectedCatInfo["hair length"] : null}
       />
       <BarChart
         data={catSheddingData}
         clickFunction={toggleShedding}
         currentFilter={sheddingFilter}
         title = "Shedding"
+        highlight={selectedCatInfo ? selectedCatInfo.shedding : null}
       />
     </div>
   )

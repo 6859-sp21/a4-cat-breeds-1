@@ -10,14 +10,15 @@ import {SkyLightStateless} from "react-skylight";
 const CatDisplay = (
   {
     sizeFilter,
-    sheddingFilter
+    sheddingFilter,
+    selectCatMain,
 }) => {
 
   const [selectedCat, setSelectedCat] = useState("");
 
   const selectCat = (catName) => {
-    console.log(catName + " selected");
     setSelectedCat(catName);
+    selectCatMain(catName);
   }
 
   return (
