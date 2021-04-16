@@ -11,6 +11,95 @@ const App = () => {
     setSelectedCat(catName);
   }
 
+  const [temperFilter, setTemperFilter] = useState({
+    "affectionate" : true,
+    "active": true,
+    "intelligent": true,
+    "loyal": true,
+    "social": true,
+    "docile": true,
+    "gentle": true,
+    "playful": true,
+    "sweet": true,
+    "strong": true,
+    "outgoing" : true,
+    "independent": true
+  });
+
+
+  const toggleTemper = (categoryToggled) => {
+    if (categoryToggled === "all") {
+      setTemperFilter({
+        "affectionate" : true,
+        "active": true,
+        "intelligent": true,
+        "loyal": true,
+        "social": true,
+        "docile": true,
+        "gentle": true,
+        "playful": true,
+        "sweet": true,
+        "strong": true,
+        "outgoing" : true,
+        "independent": true
+      })
+      return;
+    }
+
+
+    let newTemperFilter;
+
+    let allTrue = true;
+    let allFalse = true;
+    for(const key of Object.keys(temperFilter)) {
+      if (temperFilter[key]) {
+        allFalse = false;
+      } else {
+        allTrue = false;
+      }
+    }
+
+    if (allTrue) {
+      newTemperFilter = {
+        "affectionate" : false,
+        "active": false,
+        "intelligent": false,
+        "loyal": false,
+        "social": false,
+        "docile": false,
+        "gentle": false,
+        "playful": false,
+        "sweet": false,
+        "strong": false,
+        "outgoing" : false,
+        "independent": false
+      };
+      newTemperFilter[categoryToggled] = true;
+    } else {
+      newTemperFilter = {...temperFilter, [categoryToggled]: !temperFilter[categoryToggled]}
+    }
+
+    if (allFalse) {
+      newTemperFilter = {
+        "affectionate" : true,
+        "active": true,
+        "intelligent": true,
+        "loyal": true,
+        "social": true,
+        "docile": true,
+        "gentle": true,
+        "playful": true,
+        "sweet": true,
+        "strong": true,
+        "outgoing" : true,
+        "independent": true
+      }
+    }
+    setTemperFilter(newTemperFilter);
+    console.log(newTemperFilter);
+  }
+
+
   const [sizeFilter, setSizeFilter] = useState({
     small: true,
     medium: true,
@@ -137,11 +226,16 @@ const App = () => {
                   sheddingFilter={sheddingFilter}
                   toggleHair={toggleHair}
                   hairFilter={hairFilter}
+                  toggleTemper = {toggleTemper}
+                  temperFilter = {temperFilter}
                   selectedCat = {selectedCat}
+
         />
         <CatDisplay
           sizeFilter={sizeFilter}
           sheddingFilter={sheddingFilter}
+          hairFilter={hairFilter}
+          temperFilter={temperFilter}
           selectCatMain={selectCatMain}
         />
       </div>

@@ -17,7 +17,7 @@ code {
 
 // left
 $orange: #ff9107;
-$panel-width: 24vw;
+$panel-width: 400px;
 .cat-panel {
   font-family: 'Roboto', sans-serif;
   width: $panel-width;
@@ -202,12 +202,11 @@ $panel-width: 24vw;
     left: $panel-width !important;
     top: 0 !important;
     margin: 25px !important;
-    width: calc(76vw - 80px) !important;
+    width: calc(100vw - 400px - 80px) !important;
     height: calc(100vh - 80px) !important;
     display: flex;
     background: #f0f0f0;
     z-index: 1;
-
   }
 
   .skylight-close-button {

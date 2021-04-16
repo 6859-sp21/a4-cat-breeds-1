@@ -133,5 +133,60 @@ const BarChart = ({
   );
 }
 
+const TemperList = (
+  {
+    clickFunction,
+    currentFilter,
+    title,
+    highlight
+  }
+) => {
+  let isAllTrue = true;
+  for (const key of Object.keys(currentFilter)) {
+    if (!currentFilter[key]) {
+      isAllTrue = false;
+    }
+  }
+  console.log(highlight);
+  const [hover, setHover] = useState(false)
 
+  return (
+    <div className="bar-chart">
+      <div className="title">
+        {title}
+      </div>
+      {_.map(currentFilter, (value, key) => {
+        return (
+          <div className="bar-and-text" key={key}>
+            <TextButton
+              category={key}
+              clickFunction={clickFunction}
+              isOn={!isAllTrue && currentFilter[key]}
+              width = {allWidth / 2}
+              key={`text${key}`}
+              highlight={highlight ? _.includes(highlight, key) : false}
+            />
+          </div>
+        )
+      })}
+      <div
+        className="all-button"
+        onClick={() => clickFunction("all")}
+        style = {{
+          width: `${allWidth}px`,
+          background: ((
+            hover? "grey" :
+              (isAllTrue ? "grey": "lightgrey")
+          ))
+        }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        All
+      </div>
+    </div>
+  )
+}
+
+export { TemperList };
 export default BarChart;

@@ -1,6 +1,6 @@
 import catData from "../cat_metadata.json";
 import React, {useState, useEffect} from "react";
-import BarChart from "./bar.js";
+import BarChart, {TemperList} from "./bar.js";
 import _ from 'lodash';
 
 const Title = () => (
@@ -25,7 +25,9 @@ const CatPanel = (
     toggleShedding,
     sheddingFilter,
     toggleHair,
-    hairFilter
+    hairFilter,
+    toggleTemper,
+    temperFilter
   }) => {
   let catSizeData = {small: 0, medium: 0, large: 0};
   for (const cat of catData) {
@@ -79,6 +81,12 @@ const CatPanel = (
         currentFilter={sheddingFilter}
         title = "Shedding"
         highlight={selectedCatInfo ? selectedCatInfo.shedding : null}
+      />
+      <TemperList
+        clickFunction={toggleTemper}
+        currentFilter={temperFilter}
+        title="Temper"
+        highlight={selectedCatInfo ? selectedCatInfo.Temperament : null}
       />
     </div>
   )

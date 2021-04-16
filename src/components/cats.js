@@ -11,6 +11,8 @@ const CatDisplay = (
   {
     sizeFilter,
     sheddingFilter,
+    hairFilter,
+    temperFilter,
     selectCatMain,
 }) => {
 
@@ -42,7 +44,10 @@ const CatDisplay = (
               .filter((cat) => {
                 let sizeResult = false;
                 let sheddingResult = false;
-                if (cat.size != null && cat.shedding != null) {
+                let hairResult = false;
+                let temperResult = true;
+
+                if (cat.size != null && cat.shedding != null && cat["hair length"] != null) {
                   for (const size of cat.size) {
                     if (sizeFilter[size]) {
                       sizeResult = true;
@@ -54,8 +59,40 @@ const CatDisplay = (
                       sheddingResult = true;
                     }
                   }
+
+                  if (cat["hair length"]) {
+                    for (const hair of cat["hair length"]) {
+                      if (hairFilter[hair]) {
+                        hairResult = true;
+                      }
+                    }
+                  }
+
+                  let allTemper = true;
+                  for (const temper of Object.keys(temperFilter)) {
+                    if (!temperFilter[temper]) {
+                      allTemper = false;
+                    }
+                  }
+
+
+                  if (!allTemper) {
+                    for (const temper of Object.keys(temperFilter)) {
+                      if (temperFilter[temper]) {
+                        let found = false
+                        for (const catTemper of cat.Temperament) {
+                          if (catTemper === temper) {
+                            found = true
+                          }
+                        }
+                        if (!found) {
+                          temperResult = false;
+                        }
+                      }
+                    }
+                  }
                 }
-                return sizeResult && sheddingResult;
+                return sizeResult && sheddingResult && hairResult && temperResult;
               })
               .map((cat, i) =>
                 <CatPreview cat={cat} selectCat={selectCat} key={cat.breed} />
