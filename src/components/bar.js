@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 const allWidth = 300;
 const orange = "#f2a84e";
+const darktext = "#323232";
 
 const Bar = ({
   category,
@@ -54,7 +55,12 @@ const TextButton = ({
         hover? "grey" :
         (isOn ? "grey": "lightgrey")
         ),
-          width: width
+          width: width,
+          color: (
+            hover ? "white" :
+              (isOn ? "white": darktext)
+          )
+
         }
       }
       onClick={() => clickFunction(category)}
@@ -122,10 +128,15 @@ const BarChart = ({
           background: ((
             hover? "grey" :
               (isAllTrue ? "grey": "lightgrey")
-          ))
+          )),
+          color: (
+            hover ? "white" :
+              (isAllTrue ? "white": darktext)
+          )
         }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
+
       >
         All
       </div>
@@ -177,7 +188,11 @@ const TemperList = (
           background: ((
             hover? "grey" :
               (isAllTrue ? "grey": "lightgrey")
-          ))
+          )),
+          color: (
+            hover ? "white" :
+              (isAllTrue ? "white": darktext)
+          )
         }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
